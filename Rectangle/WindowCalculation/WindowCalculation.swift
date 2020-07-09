@@ -101,6 +101,12 @@ class WindowCalculationFactory {
     let moveUpCalculation = MoveUpCalculation()
     let moveDownCalculation = MoveDownCalculation()
     let almostMaximizeCalculation = AlmostMaximizeCalculation()
+    let firstSixthCalculation = FirstSixthCalculation()
+    let secondSixthCalculation = SecondSixthCalculation()
+    let thirdSixthCalculation = ThirdSixthCalculation()
+    let fourthSixthCalculation = FourthSixthCalculation()
+    let fifthSixthCalculation = FifthSixthCalculation()
+    let sixthSixthCalculation = SixthSixthCalculation()
     
     func calculation(for action: WindowAction) -> WindowCalculation? {
         
@@ -130,6 +136,12 @@ class WindowCalculationFactory {
         case .moveUp: return moveUpCalculation
         case .moveDown: return moveDownCalculation
         case .almostMaximize: return almostMaximizeCalculation
+        case .firstSixth: return firstSixthCalculation
+        case .secondSixth: return secondSixthCalculation
+        case .thirdSixth: return thirdSixthCalculation
+        case .fourthSixth: return fourthSixthCalculation
+        case .fifthSixth: return fifthSixthCalculation
+        case .sixthSixth: return sixthSixthCalculation
         default: return nil
         }
     }

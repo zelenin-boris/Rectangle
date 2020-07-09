@@ -41,7 +41,13 @@ enum WindowAction: Int {
     moveRight = 26,
     moveUp = 27,
     moveDown = 28,
-    almostMaximize = 29
+    almostMaximize = 29,
+    firstSixth = 30,
+    secondSixth = 31,
+    thirdSixth = 32,
+    fourthSixth = 33,
+    fifthSixth = 34,
+    sixthSixth = 35
     
     // Order matters here - it's used in the menu
     static let active = [leftHalf, rightHalf, topHalf, bottomHalf,
@@ -49,7 +55,8 @@ enum WindowAction: Int {
                          firstThird, firstTwoThirds, centerThird, lastTwoThirds, lastThird,
                          maximize, almostMaximize, maximizeHeight, smaller, larger, center, restore,
                          nextDisplay, previousDisplay,
-                         moveLeft, moveRight, moveUp, moveDown]
+                         moveLeft, moveRight, moveUp, moveDown,
+                         firstSixth, secondSixth, thirdSixth, fourthSixth, fifthSixth, sixthSixth]
     
     func post() {
         NotificationCenter.default.post(name: notificationName, object: ExecutionParameters(self))
@@ -97,6 +104,12 @@ enum WindowAction: Int {
         case .moveUp: return "moveUp"
         case .moveDown: return "moveDown"
         case .almostMaximize: return "almostMaximize"
+        case .firstSixth: return "firstSixth"
+        case .secondSixth: return "secondSixth"
+        case .thirdSixth: return "thirdSixth"
+        case .fourthSixth: return "fourthSixth"
+        case .fifthSixth: return "fifthSixth"
+        case .sixthSixth: return "sixthSixth"
         }
     }
 
@@ -183,6 +196,26 @@ enum WindowAction: Int {
         case .almostMaximize:
             key = "e57-QJ-6bL.title"
             value = "Almost Maximize"
+            
+        // TODO: Need translation
+        case .firstSixth:
+            key = "e57-QJ-6bL.title"
+            value = "First Sixth"
+        case .secondSixth:
+            key = "e57-QJ-6bL.title"
+            value = "Second Sixth"
+        case .thirdSixth:
+            key = "e57-QJ-6bL.title"
+            value = "Third Sixth"
+        case .fourthSixth:
+            key = "e57-QJ-6bL.title"
+            value = "Fourth Sixth"
+        case .fifthSixth:
+            key = "e57-QJ-6bL.title"
+            value = "Fifth Sixth"
+        case .sixthSixth:
+            key = "e57-QJ-6bL.title"
+            value = "Sixth Sixth"
         }
         
         return NSLocalizedString(key, tableName: "Main", value: value, comment: "")
@@ -224,6 +257,12 @@ enum WindowAction: Int {
         case .topLeft: return Shortcut( ctrl|cmd, kVK_LeftArrow )
         case .topRight: return Shortcut( ctrl|cmd, kVK_RightArrow )
         case .restore: return Shortcut( ctrl|alt, kVK_Delete)
+        case .firstSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_A )
+        case .secondSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_S )
+        case .thirdSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_D )
+        case .fourthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_F )
+        case .fifthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_G )
+        case .sixthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_H )
         default: return nil
         }
     }
@@ -251,6 +290,12 @@ enum WindowAction: Int {
         case .centerThird: return Shortcut( ctrl|alt, kVK_ANSI_F )
         case .lastTwoThirds: return Shortcut( ctrl|alt, kVK_ANSI_T )
         case .lastThird: return Shortcut( ctrl|alt, kVK_ANSI_G )
+        case .firstSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_A )
+        case .secondSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_S )
+        case .thirdSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_D )
+        case .fourthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_F )
+        case .fifthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_G )
+        case .sixthSixth: return Shortcut( ctrl|alt|shift, kVK_ANSI_H )
         default: return nil
         }
     }
@@ -283,6 +328,12 @@ enum WindowAction: Int {
         case .moveUp: return NSImage(imageLiteralResourceName: "moveUpTemplate")
         case .moveDown: return NSImage(imageLiteralResourceName: "moveDownTemplate")
         case .almostMaximize: return NSImage(imageLiteralResourceName: "almostMaximizeTemplate")
+        case .firstSixth: return NSImage(imageLiteralResourceName: "makeSmallerTemplate")
+        case .secondSixth: return NSImage(imageLiteralResourceName: "makeSmallerTemplate")
+        case .thirdSixth: return NSImage(imageLiteralResourceName: "makeSmallerTemplate")
+        case .fourthSixth: return NSImage(imageLiteralResourceName: "makeSmallerTemplate")
+        case .fifthSixth: return NSImage(imageLiteralResourceName: "makeSmallerTemplate")
+        case .sixthSixth: return NSImage(imageLiteralResourceName:"makeSmallerTemplate")
         }
     }
     
